@@ -1,13 +1,13 @@
-import CustomModal from '@src/components/General/CustomModal';
+import React from 'react';
+import { TouchableOpacity } from 'react-native';
+import WebView from 'react-native-webview';
+import CustomModal from '../components/General/CustomModal';
 import {
   PaymentCancelText,
   PaymentModalContent,
   PaymentSafeArea,
   PaymentTopContainer,
-} from '@src/components/Payment/style';
-import React from 'react';
-import {TouchableOpacity} from 'react-native';
-import WebView from 'react-native-webview';
+} from '../components/Payment/style';
 
 interface PaymentModal {
   visible: boolean;
@@ -29,7 +29,7 @@ export const PaymentModal = ({visible, close, url, onDone}: PaymentModal) => {
           <WebView
             javaScriptEnabled
             source={{uri: url}}
-            onNavigationStateChange={(state) => {
+            onNavigationStateChange={state => {
               if (state.url.includes('trxref')) {
                 onDone();
               }

@@ -1,10 +1,10 @@
-import responsive from '@src/lib/responsive';
-import {View} from 'native-base';
+import { View } from 'native-base';
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
-import styled from 'styled-components';
-import {CardWithDepth} from '../General/Cards';
-import {StyledText} from '../General/Text';
+import { TouchableOpacity } from 'react-native';
+import styled from 'styled-components/native';
+import responsive from '../../lib/responsive';
+import { CardWithDepth } from '../General/Cards';
+import { StyledText } from '../General/Text';
 
 const HomeCard = ({item, mid = false, onPress}: any) => {
   const Icon = item.icon;

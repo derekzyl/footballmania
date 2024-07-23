@@ -1,8 +1,8 @@
-import {Content, View} from 'native-base';
-import {ImageBackground} from 'react-native';
-import styled from 'styled-components';
+import { Container, View as NBView } from 'native-base';
+import { ImageBackground } from 'react-native';
+import styled from 'styled-components/native';
 
-export const PageContent = styled(Content)`
+export const PageContent = styled(Container)`
   flex: 1;
 `;
 
@@ -14,7 +14,7 @@ export const PageBackgroundImageContainer = styled(ImageBackground)`
   background-color: #000;
 `;
 
-export const AppBg = styled(View)`
+export const AppBg = styled(NBView)`
   flex: 1;
   background-color: #000;
 `;

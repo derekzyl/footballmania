@@ -1,16 +1,16 @@
-import Check from '@assets/svg/check-white.svg';
 import React from 'react';
+import Check from '../../assets/svg/check-white.svg';
+import Pass from '../../assets/svg/pass-white.svg';
+import { useTypedSelector } from '../../redux/store';
 import {
-  ButtonIcon,
-  ButtonInner,
-  ButtonText,
-  CustomButton,
-  CustomButtonProp,
+    ButtonIcon,
+    ButtonInner,
+    ButtonText,
+    CustomButton,
+    CustomButtonProp,
 } from '../General/Button';
-import {ButtonVariant} from '../General/Button/variants';
-import {PlayExtraButton, PlayExtraButtonFlex} from './style';
-import Pass from '@assets/svg/pass-white.svg';
-import {useTypedSelector} from '@src/redux/store';
+import { ButtonVariant } from '../General/Button/variants';
+import { PlayExtraButton, PlayExtraButtonFlex } from './style';
 
 interface PlayControlButtonProp extends CustomButtonProp {
   icon?: any;
@@ -46,7 +46,7 @@ interface PlayControls {
 }
 
 const PlayControls = ({onPass, onDouble, usedBoosts}: PlayControls) => {
-  const credits = useTypedSelector((state) => state.profile.credit);
+  const credits = useTypedSelector(state => state.profile.credit);
 
   const hasPass = credits.pass >= 1;
   const hasDouble = credits.double >= 1;

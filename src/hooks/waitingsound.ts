@@ -1,9 +1,9 @@
 // import {use} from 'react';
-import { useTypedSelector } from '@src/redux/store';
 import SoundPlayer from 'react-native-sound-player';
+import { useTypedSelector } from '../redux/store';
 
 const useSound = () => {
-  const music = useTypedSelector((state) => state.music.music_id);
+  const music = useTypedSelector(state => state.music.music_id);
   console.log(music, 'this is music id');
 
   const play = () => {
@@ -36,7 +36,7 @@ const useSound = () => {
     SoundPlayer.stop();
   };
 
-  return { play, stop };
+  return {play, stop};
 };
 
 export default useSound;

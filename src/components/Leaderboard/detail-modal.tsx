@@ -12,12 +12,12 @@ import {
   LeaderboardDetailRowItem,
 } from './detail-style';
 
-import Coin from '@assets/svg/coin.svg';
-import Podium from '@assets/svg/podium.svg';
-import Star from '@assets/svg/star.svg';
+import { LeaderboardItemType } from '../..//redux/reducers/leaderboard/types';
+import Coin from '../../assets/svg/coin.svg';
+import Podium from '../../assets/svg/podium.svg';
+import Star from '../../assets/svg/star.svg';
+import { useTypedSelector } from '../../redux/store';
 import { ProfileStat } from '../Profile/type';
-import { useTypedSelector } from '@src/redux/store';
-import { LeaderboardItemType } from '@src/redux/reducers/leaderboard/types';
 
 interface LeaderboardDetailModal {
   visible: boolean;
@@ -30,16 +30,16 @@ const LeaderboardDetailModal = ({
   visible,
   item,
 }: LeaderboardDetailModal) => {
-  const allTeams = useTypedSelector((state) => state.general.allTeams);
-  const allCountries = useTypedSelector((state) => state.general.allCountries);
+  const allTeams = useTypedSelector(state => state.general.allTeams);
+  const allCountries = useTypedSelector(state => state.general.allCountries);
   // console.log(item);
   const user = item?.user;
 
-  const team = allTeams.find((tm) => tm.code === user?.team);
-  const country = allCountries.find((ct) => ct.code === user?.country);
+  const team = allTeams.find(tm => tm.code === user?.team);
+  const country = allCountries.find(ct => ct.code === user?.country);
 
   const statItems: ProfileStat[] = [
-    { title: 'World Rank', rank: 11023, icon: Podium },
+    {title: 'World Rank', rank: 11023, icon: Podium},
     {
       title: 'Coins Earned',
       rank: item?.total_credits_earned?.coins || 0,
@@ -55,21 +55,21 @@ const LeaderboardDetailModal = ({
   return (
     <CustomModal px header visible={visible} close={close}>
       <LeaderboardDetailContent>
-        <LeaderboardDetailImage source={{ uri: user?.profile_picture }} />
+        <LeaderboardDetailImage source={{uri: user?.profile_picture}} />
         <LeaderboardDetailName>{user?.username}</LeaderboardDetailName>
 
         <LeaderboardDetailRow>
           <LeaderboardDetailRowItem>
             <LeaderboardDetailItemImage
               resizeMode="contain"
-              source={{ uri: team?.logo }}
+              source={{uri: team?.logo}}
             />
             <LeaderboardDetailItemText>{team?.code}</LeaderboardDetailItemText>
           </LeaderboardDetailRowItem>
           <LeaderboardDetailRowItem>
             <LeaderboardDetailItemImage
               resizeMode="contain"
-              source={{ uri: country?.logo }}
+              source={{uri: country?.logo}}
             />
             <LeaderboardDetailItemText>
               {country?.code}

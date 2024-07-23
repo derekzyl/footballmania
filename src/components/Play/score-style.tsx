@@ -1,6 +1,6 @@
-import {View} from 'native-base';
-import styled from 'styled-components';
-import {StyledText} from '../General/Text';
+import { View } from 'native-base';
+import styled from 'styled-components/native';
+import { StyledText } from '../General/Text';
 
 export const ScoreModalContent = styled(View)`
   width: 100%;

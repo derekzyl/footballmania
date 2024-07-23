@@ -1,12 +1,12 @@
-import {useNavigation} from '@react-navigation/native';
-import CategoryItem from '@src/components/Category/item';
-import {CategoryTitle} from '@src/components/Category/style';
-import Box from '@src/components/General/Box';
-import PlayHeader from '@src/components/Header/play';
-import PageLayout from '@src/components/Layout';
-import BlurBackground from '@src/components/Layout/blur';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {ScrollView} from 'react-native';
+import { ScrollView } from 'react-native';
+import CategoryItem from '../components/Category/item';
+import { CategoryTitle } from '../components/Category/style';
+import Box from '../components/General/Box';
+import PlayHeader from '../components/Header/play';
+import PageLayout from '../components/Layout';
+import BlurBackground from '../components/Layout/blur';
 
 const categories = [
   'Arsenal',

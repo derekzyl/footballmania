@@ -1,7 +1,7 @@
-import {View} from 'native-base';
-import {StyleSheet} from 'react-native';
-import styled from 'styled-components';
-import {StyledText} from '../General/Text';
+import { View } from 'native-base';
+import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
+import { StyledText } from '../General/Text';
 
 export const HomeHeading = styled(StyledText)`
   /* color: #fff9e9; */

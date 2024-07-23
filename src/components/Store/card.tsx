@@ -1,10 +1,13 @@
-import Check from '@assets/svg/check-blue.svg';
-import Coin from '@assets/svg/coin.svg';
-import Pass from '@assets/svg/pass.svg';
-import Box from '@src/components/General/Box';
-import {CustomButton} from '@src/components/General/Button';
-import {ButtonVariant} from '@src/components/General/Button/variants';
-import BlurBackground from '@src/components/Layout/blur';
+import { View } from 'native-base';
+import React from 'react';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Check from '../../assets/svg/check-blue.svg';
+import Coin from '../../assets/svg/coin.svg';
+import Pass from '../../assets/svg/pass.svg';
+import Box from '../../components/General/Box';
+import { CustomButton } from '../../components/General/Button';
+import { ButtonVariant } from '../../components/General/Button/variants';
+import BlurBackground from '../../components/Layout/blur';
 import {
   StoreButtonCardTop,
   StoreButtonCardTopText,
@@ -14,11 +17,8 @@ import {
   StoreCardRow,
   StoreCardRowItem,
   StoreCardRowItemText,
-} from '@src/components/Store';
-import {StoreItem} from '@src/redux/reducers/store/types';
-import {View} from 'native-base';
-import React from 'react';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+} from '../../components/Store';
+import { StoreItem } from '../../redux/reducers/store/types';
 
 const getBenefitIcon = (type: 'PASS' | 'DOUBLE' | 'COIN') => {
   if (type === 'PASS') {

@@ -1,4 +1,6 @@
 import React from 'react';
+import Coin from '../../assets/svg/coin.svg';
+import { useTypedSelector } from '../../redux/store';
 import Box from '../General/Box';
 import {
   LeaderboardFooterContainer,
@@ -10,11 +12,9 @@ import {
   LeaderboardFooterPosition,
   LeaderboardFooterRight,
 } from './footer-style';
-import Coin from '@assets/svg/coin.svg';
-import {useTypedSelector} from '@src/redux/store';
 
 const LeaderboardFooter = () => {
-  const user = useTypedSelector((state) => state.profile.user);
+  const user = useTypedSelector(state => state.profile.user);
   return (
     <LeaderboardFooterContainer>
       <LeaderboardFooterContent>

@@ -1,32 +1,22 @@
 /* eslint-disable react-native/no-inline-styles */
-import {CustomButton} from '@src/components/General/Button';
-import {logoutAction} from '@src/redux/actions/auth';
-import React, {useState, useEffect} from 'react';
-import {BackHandler} from 'react-native';
-import {useDispatch} from 'react-redux';
-import Box from '../General/Box';
-import {ButtonVariant} from '../General/Button/variants';
-import BlurBackground from '../Layout/blur';
-import Share from 'react-native-share';
-import {fireToast} from '@src/utils/toast';
-import {useNavigation} from '@react-navigation/core';
-import {updatePlaySoundAction} from '@src/redux/actions/profile';
-import {
-  Alert,
-  TextInput,
-  Modal,
-  StyleSheet,
-  Text,
-  Pressable,
-  View,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 import axios from 'axios';
-import {useTypedSelector} from '@src/redux/store';
-import {getProfileAction} from '@src/redux/actions/profile';
-import {store} from '@src/redux/store';
-import {baseURL} from '../../services/_constants';
+import React, { useEffect, useState } from 'react';
+import {
+  Alert, BackHandler, Image, Modal, Pressable, StyleSheet,
+  Text, TextInput, TouchableOpacity, View
+} from 'react-native';
+import Share from 'react-native-share';
+import { useDispatch } from 'react-redux';
+import { CustomButton } from '../../components/General/Button';
+import { logoutAction } from '../../redux/actions/auth';
+import { getProfileAction, updatePlaySoundAction } from '../../redux/actions/profile';
+import { store, useTypedSelector } from '../../redux/store';
+import { baseURL } from '../../services/_constants';
+import { fireToast } from '../../utils/toast';
+import Box from '../General/Box';
+import { ButtonVariant } from '../General/Button/variants';
+import BlurBackground from '../Layout/blur';
 
 const RatingModal = ({
   modalVisible,
@@ -36,7 +26,7 @@ const RatingModal = ({
   setModalVisible: any;
 }) => {
   const dispatch = useDispatch();
-  const user = useTypedSelector((state) => state.profile.user);
+  const user = useTypedSelector(state => state.profile.user);
 
   useEffect(() => {
     dispatch(getProfileAction());
@@ -160,7 +150,7 @@ const RatingModal = ({
 const SettingsContent = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
-  const playSound = useTypedSelector((state) => state.profile.sound);
+  const playSound = useTypedSelector(state => state.profile.sound);
   const [modalVisible, setModalVisible] = useState(false);
 
   const [active, setActive] = useState({

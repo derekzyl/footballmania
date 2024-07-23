@@ -1,10 +1,10 @@
 import CheckBox from '@react-native-community/checkbox';
-import GeneralSectionTitle from '@src/components/General/Section';
-import {StyledText} from '@src/components/General/Text';
-import responsive from '@src/lib/responsive';
-import {View} from 'native-base';
-import {TouchableOpacity} from 'react-native';
-import styled from 'styled-components';
+import { View } from 'native-base';
+import { TouchableOpacity } from 'react-native';
+import styled from 'styled-components/native';
+import GeneralSectionTitle from '../../components/General/Section';
+import { StyledText } from '../../components/General/Text';
+import responsive from '../../lib/responsive';
 
 export const CategoryTitle = styled(GeneralSectionTitle)`
   color: #fff;

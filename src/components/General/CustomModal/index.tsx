@@ -1,11 +1,11 @@
-import {ScoreModalClose} from '@src/components/Play/score-style';
-import {View} from 'native-base';
-import React, {ReactNode} from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import { View } from 'native-base';
+import React, { ReactNode } from 'react';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
+import ModalClose from '../../../assets/svg/modal-close.svg';
+import { ScoreModalClose } from '../../../components/Play/score-style';
 import Box from '../Box';
-import {CardWithDepth} from '../Cards';
-import ModalClose from '@assets/svg/modal-close.svg';
+import { CardWithDepth } from '../Cards';
 
 interface CustomModalProp {
   visible: boolean;

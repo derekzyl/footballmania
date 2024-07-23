@@ -1,12 +1,13 @@
-import cloudinaryRequest from '@src/services/image-upload';
-import profileService from '@src/services/profile';
-import creditSocket from '@src/services/sockets/credits';
-import {fireToast} from '@src/utils/toast';
-import {launchImageLibrary} from 'react-native-image-picker';
-import {action} from 'typesafe-actions';
-import {AuthActions} from '../reducers/auth/types';
-import {Dispatch} from 'redux';
-import {ProfileActions, ProfileUpdatePayload} from '../reducers/profile/types';
+/* eslint-disable prettier/prettier */
+import { launchImageLibrary } from 'react-native-image-picker';
+import { Dispatch } from 'redux';
+import { action } from 'typesafe-actions';
+import cloudinaryRequest from '../../services/image-upload';
+import profileService from '../../services/profile';
+import creditSocket from '../../services/sockets/credits';
+import { fireToast } from '../../utils/toast';
+import { AuthActions } from '../reducers/auth/types';
+import { ProfileActions, ProfileUpdatePayload } from '../reducers/profile/types';
 
 export const getProfileAction = () => async (dispatch: Dispatch) => {
   try {
@@ -35,7 +36,7 @@ export const updateProfilePictureAction = (
         response,
         (data: any) => {
           const payload = {profile_picture: data.url};
-          dispatch(
+            dispatch(
             updateProfileAction(payload, onUpdateSuccess, onUpdateError),
           );
         },
@@ -57,7 +58,7 @@ export const updateProfileAction = (
     dispatch(action(AuthActions.UPDATE_AUTH, true));
     onSuccess?.();
     dispatch(getProfileAction());
-  } catch (error) {
+  } catch (error:any) {
     const errorData = error.response?.data;
     const msg = errorData.message;
     fireToast({text: msg});

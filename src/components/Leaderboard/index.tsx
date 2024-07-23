@@ -1,12 +1,16 @@
 /* eslint-disable react-native/no-inline-styles */
+import { View } from 'native-base';
+import React, { useEffect, useState } from 'react';
+import { FlatList } from 'react-native';
+import responsive from '../../lib/responsive';
 import {
   LeaderboardDetailModalType,
   LeaderboardItemType,
-} from '@src/redux/reducers/leaderboard/types';
-import { useTypedSelector } from '@src/redux/store';
-import React, { useEffect, useState } from 'react';
+} from '../../redux/reducers/leaderboard/types';
+import { useTypedSelector } from '../../redux/store';
 import { CustomButton } from '../General/Button';
 import { ButtonVariant } from '../General/Button/variants';
+import { LoadingText } from '../Play/style';
 import LeaderboardDetailModal from './detail-modal';
 import LeaderboardItem from './item';
 import LeaderboardSpecial from './special';
@@ -16,17 +20,13 @@ import {
   LeaderboardList,
   LeaderboardTopScorers,
 } from './style';
-import { FlatList } from 'react-native';
-import { View } from 'native-base';
-import responsive from '@src/lib/responsive';
-import { LoadingText } from '../Play/style';
 
 interface LeaderboardTop {
   items: LeaderboardItemType[];
   onPress: (item: LeaderboardItemType) => void;
 }
 
-const LeaderboardTop = ({ items, onPress }: LeaderboardTop) => {
+const LeaderboardTop = ({items, onPress}: LeaderboardTop) => {
   console.log('topss', items.length);
   //console.log(items[0]);
   return (
@@ -85,7 +85,7 @@ const initialDetail = {
 };
 
 const LeaderboardComponent = () => {
-  const leaderboards = useTypedSelector((state) => state.leaderboard);
+  const leaderboards = useTypedSelector(state => state.leaderboard);
 
   const [currentList, setCurrentList] = useState<LeaderboardItemType[]>([]);
   const [category, setCategory] = useState<CAT>('weekly');
@@ -94,12 +94,11 @@ const LeaderboardComponent = () => {
   const top = showTop ? currentList.slice(0, 3) : [];
   const others: LeaderboardItemType[] = currentList.slice(showTop ? 3 : 0);
 
-  const [detailModal, setDetailModal] = useState<LeaderboardDetailModalType>(
-    initialDetail,
-  );
+  const [detailModal, setDetailModal] =
+    useState<LeaderboardDetailModalType>(initialDetail);
 
   const openDetails = (item: LeaderboardItemType) => {
-    setDetailModal({ show: true, item });
+    setDetailModal({show: true, item});
   };
 
   const closeDetails = () => {
@@ -127,7 +126,7 @@ const LeaderboardComponent = () => {
         close={closeDetails}
       />
       <LeaderboardButtonContainer>
-        {tabs.map((tab) => (
+        {tabs.map(tab => (
           <LeaderboardButton key={tab.category}>
             <CustomButton
               onPress={() => setCategory(tab.category)}
@@ -149,8 +148,8 @@ const LeaderboardComponent = () => {
             <FlatList
               showsVerticalScrollIndicator={false}
               data={others}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item, index }) => (
+              keyExtractor={item => item.id}
+              renderItem={({item, index}) => (
                 <LeaderboardItem
                   onPress={() => openDetails(item)}
                   index={showTop ? 4 + index : index + 1}

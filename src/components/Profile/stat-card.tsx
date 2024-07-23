@@ -1,9 +1,10 @@
-import {View} from 'native-base';
+import { View } from 'native-base';
 import React from 'react';
-import styled from 'styled-components';
-import {StyledText} from '../General/Text';
-import {ProfileStat} from './type';
-import Points from '@assets/svg/star.svg';
+import styled from 'styled-components/native';
+
+import Points from '../../assets/svg/star.svg';
+import { StyledText } from '../General/Text';
+import { ProfileStat } from './type';
 
 interface ProfileStatCard {
   item: ProfileStat;

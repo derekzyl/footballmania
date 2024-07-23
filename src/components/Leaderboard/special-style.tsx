@@ -1,7 +1,7 @@
-import {View} from 'native-base';
-import styled from 'styled-components';
-import {StyledText} from '../General/Text';
-import {Image, TouchableOpacity} from 'react-native';
+import { View } from 'native-base';
+import { Image, TouchableOpacity } from 'react-native';
+import styled from 'styled-components/native';
+import { StyledText } from '../General/Text';
 
 export const LeaderboardSpecialContainer = styled(TouchableOpacity)`
   align-items: center;

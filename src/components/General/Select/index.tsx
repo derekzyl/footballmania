@@ -1,13 +1,13 @@
-import ModalClose from '@assets/svg/modal-close.svg';
-import responsive from '@src/lib/responsive';
-import {cloudinary} from '@src/utils/image';
-import {View} from 'native-base';
-import React, {useState} from 'react';
-import {FlatList, Image, TouchableOpacity} from 'react-native';
+import { View } from 'native-base';
+import React, { useState } from 'react';
+import { FlatList, Image, TouchableOpacity } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
+import ModalClose from '../../../assets/svg/modal-close.svg';
+import responsive from '../../../lib/responsive';
+import { cloudinary } from '../../../utils/image';
 import CustomModal from '../CustomModal';
-import {StyledText} from '../Text';
+import { StyledText } from '../Text';
 
 interface CustomSelectProps {
   items: any[];
@@ -51,7 +51,7 @@ const CustomSelect = ({
     onClick?.(val);
   };
 
-  const currentItem = items.find((item) => item.code === currentCode);
+  const currentItem = items.find(item => item.code === currentCode);
   return (
     <>
       <CustomModal
@@ -69,7 +69,7 @@ const CustomSelect = ({
 
           <FlatList
             data={items}
-            keyExtractor={(item) => item.code || item}
+            keyExtractor={item => item.code || item}
             renderItem={({item}) => (
               <SelectModalItem
                 onClick={handleClick}

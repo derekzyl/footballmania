@@ -1,12 +1,15 @@
-import Coin from '@assets/svg/coin.svg';
-import Podium from '@assets/svg/podium.svg';
-import Star from '@assets/svg/star.svg';
-import Box from '@components/General/Box';
-import CustomSelect from '@src/components/General/Select';
-import NavigationHeader from '@src/components/Header/navigation.header';
-import BlurBackground from '@src/components/Layout/blur';
-import PlayLayout from '@src/components/Layout/play';
-import ProfileStatCard from '@src/components/Profile/stat-card';
+import React, { useEffect, useState } from 'react';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { useDispatch } from 'react-redux';
+import Coin from '../assets/svg/coin.svg';
+import Podium from '../assets/svg/podium.svg';
+import Star from '../assets/svg/star.svg';
+import Box from '../components/General/Box';
+import CustomSelect from '../components/General/Select';
+import NavigationHeader from '../components/Header/navigation.header';
+import BlurBackground from '../components/Layout/blur';
+import PlayLayout from '../components/Layout/play';
+import ProfileStatCard from '../components/Profile/stat-card';
 import {
   ProfileAvatar,
   ProfileAvatarCamera,
@@ -18,21 +21,18 @@ import {
   ProfileSelect,
   ProfileSelectLists,
   ProfileStatList,
-} from '@src/components/Profile/style';
-import {ProfileStat} from '@src/components/Profile/type';
-import {getGeneralAction} from '@src/redux/actions/general';
+} from '../components/Profile/style';
+import { ProfileStat } from '../components/Profile/type';
+import { getGeneralAction } from '../redux/actions/general';
 import {
   getProfileAction,
   updateProfileAction,
   updateProfilePictureAction,
-} from '@src/redux/actions/profile';
-import {Profile} from '@src/redux/reducers/profile/types';
-import {useTypedSelector} from '@src/redux/store';
-import {cloudinary} from '@src/utils/image';
-import {fireToast} from '@src/utils/toast';
-import React, {useEffect, useState} from 'react';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {useDispatch} from 'react-redux';
+} from '../redux/actions/profile';
+import { Profile } from '../redux/reducers/profile/types';
+import { useTypedSelector } from '../redux/store';
+import { cloudinary } from '../utils/image';
+import { fireToast } from '../utils/toast';
 import banksAndCodes from './banksAndCodes';
 
 const initial: Partial<Profile> = {
@@ -49,8 +49,8 @@ const initial: Partial<Profile> = {
 const ProfileScreen = () => {
   const [input, setInput] = useState(initial);
   const dispatch = useDispatch();
-  const user = useTypedSelector((state) => state.profile.user);
-  const general = useTypedSelector((state) => state.general);
+  const user = useTypedSelector(state => state.profile.user);
+  const general = useTypedSelector(state => state.general);
 
   const handleChange = (key: string, value: string) => {
     setInput({...input, [key]: value});
@@ -86,7 +86,7 @@ const ProfileScreen = () => {
     if (other) {
       const payload = {
         bank: Object.keys(banksAndCodes).find(
-          (bank) => banksAndCodes[bank] === other,
+          bank => banksAndCodes[bank] === other,
         ),
       };
 
@@ -264,9 +264,7 @@ const ProfileScreen = () => {
 };
 
 const ProfileLeaderboard = () => {
-  const leaderboard = useTypedSelector(
-    (state) => state.profile.user.leaderboard,
-  );
+  const leaderboard = useTypedSelector(state => state.profile.user.leaderboard);
   const statItems: ProfileStat[] = [
     {title: 'World Rank', rank: 123, icon: Podium},
     {title: 'Coins Earned', rank: leaderboard.coins, icon: Coin},

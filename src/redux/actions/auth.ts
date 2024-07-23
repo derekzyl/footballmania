@@ -1,9 +1,9 @@
-import authService from '@src/services/auth';
-import facebookService from '@src/services/facebook';
-import googleService from '@src/services/google';
-import {fireToast} from '@src/utils/toast';
-import {action} from 'typesafe-actions';
-import {AuthActions, LoginProps, LoginResponse} from '../reducers/auth/types';
+import { action } from 'typesafe-actions';
+import authService from '../../services/auth';
+// import facebookService from '../../services/facebook';
+import googleService from '../../services/google';
+import { fireToast } from '../../utils/toast';
+import { AuthActions, LoginProps, LoginResponse } from '../reducers/auth/types';
 
 export const googleLoginAction =
   (onRegisterSuccess?: any, onError?: any) => async (dispatch: any) => {
@@ -33,30 +33,30 @@ export const googleLoginAction =
     }
   };
 
-export const facebookLoginAction =
-  (onRegisterSuccess?: any, onError?: any) => async (dispatch: any) => {
-    const handleSuccess = (response: any) => {
-      const loginPayload: LoginProps = {
-        email: response?.email,
-        strategy: 'facebook',
-      };
+// export const facebookLoginAction =
+//   (onRegisterSuccess?: any, onError?: any) => async (dispatch: any) => {
+//     const handleSuccess = (response: any) => {
+//       const loginPayload: LoginProps = {
+//         email: response?.email,
+//         strategy: 'facebook',
+//       };
 
-      const imgUrl = response?.picture?.data?.url;
-      if (imgUrl) {
-        loginPayload.profile_picture = imgUrl;
-      }
+//       const imgUrl = response?.picture?.data?.url;
+//       if (imgUrl) {
+//         loginPayload.profile_picture = imgUrl;
+//       }
 
-      dispatch(loginAction(loginPayload, onRegisterSuccess, onError));
-    };
+//       dispatch(loginAction(loginPayload, onRegisterSuccess, onError));
+//     };
 
-    const handleError = (msg: string) => {
-      fireToast({text: msg});
-      console.log(msg);
-      onError();
-    };
+//     const handleError = (msg: string) => {
+//       fireToast({text: msg});
+//       console.log(msg);
+//       onError();
+//     };
 
-    await facebookService.handleFacebook(handleSuccess, handleError);
-  };
+//     await facebookService.handleFacebook(handleSuccess, handleError);
+//   };
 
 export const loginAction =
   (

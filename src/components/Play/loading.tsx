@@ -1,15 +1,15 @@
-import {useRoute} from '@react-navigation/core';
+import { useRoute } from '@react-navigation/core';
+import React, { useEffect, useState } from 'react';
+import { TouchableOpacity } from 'react-native';
+import { useDispatch } from 'react-redux';
 import {
-  getPracticeSessionAction,
   getLiveSessionAction,
-} from '@src/redux/actions/play';
-import {Domain} from '@src/redux/reducers/play/types';
-import React, {useEffect, useState} from 'react';
-import {TouchableOpacity} from 'react-native';
-import {useDispatch} from 'react-redux';
+  getPracticeSessionAction,
+} from '../../redux/actions/play';
+import { Domain } from '../../redux/reducers/play/types';
 import BannerAd from '../ads';
 import Box from '../General/Box';
-import {LargeCircularProgress} from '../General/Progress';
+import { LargeCircularProgress } from '../General/Progress';
 import BlurBackground from '../Layout/blur';
 import {
   LoadingCenter,

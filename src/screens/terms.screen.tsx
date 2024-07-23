@@ -1,8 +1,8 @@
-import Box from '@components/General/Box';
-import {TermsAndConditionContent} from '@src/components/Content';
-import NavigationHeader from '@src/components/Header/navigation.header';
-import PlayLayout from '@src/components/Layout/play';
 import React from 'react';
+import { TermsAndConditionContent } from '../components/Content';
+import Box from '../components/General/Box';
+import NavigationHeader from '../components/Header/navigation.header';
+import PlayLayout from '../components/Layout/play';
 
 const TermsScreen = () => {
   return (

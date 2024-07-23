@@ -1,25 +1,25 @@
-import Confetti from '@assets/svg/confetti.svg';
-import ModalClose from '@assets/svg/modal-close.svg';
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import { TouchableOpacity } from 'react-native';
+import Coin from '../../assets/svg/coin.svg';
+import Confetti from '../../assets/svg/confetti.svg';
+import ModalClose from '../../assets/svg/modal-close.svg';
+import { SessionResult } from '../../redux/reducers/play/types';
 import Box from '../General/Box';
-import {CustomButton} from '../General/Button';
-import {ButtonVariant} from '../General/Button/variants';
+import { CustomButton } from '../General/Button';
+import { ButtonVariant } from '../General/Button/variants';
 import CustomModal from '../General/CustomModal';
 import ProfileStatCard from '../Profile/stat-card';
 import {
-  ScoreButton,
-  ScoreButtons,
-  ScoreModalClose,
-  ScoreModalContent,
-  ScoreModalIcon,
-  ScoreModalText,
-  ScoreModalTop,
-  ScorePoint,
-  ScorePointText,
+    ScoreButton,
+    ScoreButtons,
+    ScoreModalClose,
+    ScoreModalContent,
+    ScoreModalIcon,
+    ScoreModalText,
+    ScoreModalTop,
+    ScorePoint,
+    ScorePointText,
 } from './score-style';
-import Coin from '@assets/svg/coin.svg';
-import {SessionResult} from '@src/redux/reducers/play/types';
 
 interface ScoreModalProp {
   visible: boolean;

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">footballmania</string>
+        <string name="facebook_app_id">569845338027642</string>
+
+
+    <string name="fb_login_protocol_scheme">fb569845338027642</string>
+    <string name="facebook_client_token">4df54f2a17434a7e7fcbe0aede7809dd</string>
+   
 </resources>

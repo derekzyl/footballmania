@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "470000296256",
+    "project_id": "footballmania-3c325",
+    "storage_bucket": "footballmania-3c325.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470000296256:android:7352e8d581a483727f5aa5",
+        "android_client_info": {
+          "package_name": "com.footballmania"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470000296256-k291d7arej1i2v3s9p6dqgl516rjjgah.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.footballmania",
+            "certificate_hash": "23c79078300a46ee7c5366fa92010e348ae2d466"
+          }
+        },
+        {
+          "client_id": "470000296256-nvfro0sav3kisf830nvdif7heggbe9sp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP9udYtWB3OC1AUKsNhoxeDKrKhiHGbmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470000296256-nvfro0sav3kisf830nvdif7heggbe9sp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

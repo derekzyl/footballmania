@@ -1,7 +1,8 @@
-import {View} from 'native-base';
+
+import { View } from 'native-base';
 import React from 'react';
-import {ActivityIndicator} from 'react-native';
-import styled from 'styled-components';
+import { ActivityIndicator } from 'react-native';
+import styled from 'styled-components/native';
 
 interface LoaderOverlay {
   visible: boolean;

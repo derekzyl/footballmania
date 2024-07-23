@@ -1,15 +1,15 @@
-import {useNavigation} from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/core';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import {
   getSessionResultAction,
   submitLiveSessionAction,
   submitPracticeSessionAction,
-} from '@src/redux/actions/play';
-import {consumeCreditAction} from '@src/redux/actions/profile';
-import {SessionResult, WinnersInfo} from '@src/redux/reducers/play/types';
-import {useTypedSelector} from '@src/redux/store';
-import {getPassPerks} from '@src/utils/play';
-import {useState} from 'react';
-import {useDispatch} from 'react-redux';
+} from '../redux/actions/play';
+import { consumeCreditAction } from '../redux/actions/profile';
+import { SessionResult, WinnersInfo } from '../redux/reducers/play/types';
+import { useTypedSelector } from '../redux/store';
+import { getPassPerks } from '../utils/play';
 import useAnswer from './useAnswer';
 
 const initialResult = {
@@ -30,20 +30,18 @@ const usePlaySession = () => {
   const dispatch = useDispatch();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [resultModal, setResultModal] = useState(false);
-  const [winnersInfo, setWinnersInfo] = useState<WinnersInfo>(
-    initialWInnersInfo,
-  );
+  const [winnersInfo, setWinnersInfo] =
+    useState<WinnersInfo>(initialWInnersInfo);
 
-  const [sessionResult, setSessionResult] = useState<SessionResult>(
-    initialResult,
-  );
+  const [sessionResult, setSessionResult] =
+    useState<SessionResult>(initialResult);
 
   const [usedBoosts, setUsedBoosts] = useState({
     usedPass: false,
     usedDouble: false,
   });
 
-  const session = useTypedSelector((state) => state.play.currentSession);
+  const session = useTypedSelector(state => state.play.currentSession);
   const currentQuestion = session.questions[currentIndex];
   const answerState = useAnswer();
 
@@ -122,7 +120,7 @@ const usePlaySession = () => {
       return;
     }
 
-    setUsedBoosts((inp) => ({...inp, usedPass: true}));
+    setUsedBoosts(inp => ({...inp, usedPass: true}));
 
     dispatch(consumeCreditAction('pass'));
 
@@ -146,7 +144,7 @@ const usePlaySession = () => {
       return;
     }
 
-    setUsedBoosts((inp) => ({...inp, usedDouble: true}));
+    setUsedBoosts(inp => ({...inp, usedDouble: true}));
     dispatch(consumeCreditAction('double'));
     answerState.consumeDouble();
   };
@@ -162,14 +160,14 @@ const usePlaySession = () => {
 
   const showWinners = () => {
     if (session.type === 'LIVE' && session.session_code) {
-      setWinnersInfo((info) => ({...info, show: true, fetching: true}));
+      setWinnersInfo(info => ({...info, show: true, fetching: true}));
       dispatch(getSessionResultAction(session.session_code, onLiveResult));
     }
   };
 
   const onLiveResult = (data: any) => {
     console.log('the result', data);
-    setWinnersInfo((inp) => ({...inp, fetching: false, items: data}));
+    setWinnersInfo(inp => ({...inp, fetching: false, items: data}));
   };
 
   const hasWinners = session.type === 'LIVE';

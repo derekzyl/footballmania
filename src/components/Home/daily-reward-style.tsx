@@ -1,8 +1,8 @@
-import responsive from '@src/lib/responsive';
-import {View} from 'native-base';
-import styled from 'styled-components';
-import {StyledText} from '../General/Text';
-import {ScoreModalContent} from '../Play/score-style';
+import { View } from 'native-base';
+import styled from 'styled-components/native';
+import responsive from '../../lib/responsive';
+import { StyledText } from '../General/Text';
+import { ScoreModalContent } from '../Play/score-style';
 
 export const DailyRewardContent = styled(ScoreModalContent)`
   align-items: center;

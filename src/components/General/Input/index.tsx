@@ -1,5 +1,5 @@
-import {TextInput} from 'react-native';
-import styled from 'styled-components';
+import { TextInput } from 'react-native';
+import styled from 'styled-components/native';
 
 export const CustomInput = styled(TextInput).attrs({
   placeholderTextColor: '#BEC4CC',

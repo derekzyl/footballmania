@@ -1,11 +1,12 @@
-import { combineReducers } from 'redux';
+
+import { combineReducers } from '@reduxjs/toolkit/react';
 import authReducer from './auth';
 import generalReducer from './general';
 import leaderboardReducer from './leaderboard';
+import musicReducer from './music';
 import playReducer from './play';
 import profileReducer from './profile';
 import storeReducer from './store';
-import musicReducer from './music';
 
 const rootReducer = combineReducers({
   auth: authReducer,

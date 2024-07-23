@@ -1,21 +1,21 @@
-import Box from '@src/components/General/Box';
-import {CustomButton} from '@src/components/General/Button';
-import {ButtonVariant} from '@src/components/General/Button/variants';
-import CustomSelect from '@src/components/General/Select';
-import {StyledText} from '@src/components/General/Text';
-import PageLayout from '@src/components/Layout';
-import {ProfileNameInput} from '@src/components/Profile/style';
-import responsive from '@src/lib/responsive';
+import { View } from 'native-base';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import styled from 'styled-components/native';
+import Box from '../components/General/Box';
+import { CustomButton } from '../components/General/Button';
+import { ButtonVariant } from '../components/General/Button/variants';
+import CustomSelect from '../components/General/Select';
+import { StyledText } from '../components/General/Text';
+import PageLayout from '../components/Layout';
+import { ProfileNameInput } from '../components/Profile/style';
+import responsive from '../lib/responsive';
 import {
-  getAllCountriesAction,
-  getAllTeamsAction,
-} from '@src/redux/actions/general';
-import {updateProfileAction} from '@src/redux/actions/profile';
-import {useTypedSelector} from '@src/redux/store';
-import {View} from 'native-base';
-import React, {useEffect, useState} from 'react';
-import {useDispatch} from 'react-redux';
-import styled from 'styled-components';
+    getAllCountriesAction,
+    getAllTeamsAction,
+} from '../redux/actions/general';
+import { updateProfileAction } from '../redux/actions/profile';
+import { useTypedSelector } from '../redux/store';
 
 const initialState = {
   username: '',

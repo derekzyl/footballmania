@@ -1,14 +1,16 @@
-import {ProgressText} from '@src/components/Play/style';
-import useSound from '@src/hooks/sound';
-import {useTypedSelector} from '@src/redux/store';
-import {View} from 'native-base';
-import React, {useEffect} from 'react';
-import {StyleSheet} from 'react-native';
-import {CountdownCircleTimer} from 'react-native-countdown-circle-timer';
-import styled from 'styled-components';
-import {StyledText} from '../Text';
+/* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { View } from 'native-base';
+import React, { useEffect } from 'react';
+import { StyleSheet } from 'react-native';
+import { CountdownCircleTimer } from 'react-native-countdown-circle-timer';
+import styled from 'styled-components/native';
+import { ProgressText } from '../../../components/Play/style';
+import useSound from '../../../hooks/sound';
+import { useTypedSelector } from '../../../redux/store';
+import { StyledText } from '../Text';
 
-// import countdown from '@src/assets/sounds/countdown.mp3';
+// import countdown from '../../../assets/sounds/countdown.mp3';
 
 var SOUND_STACK: Array<string> = [];
 
@@ -63,10 +65,9 @@ const CircularProgress = ({
       key={index}
       onComplete={handleComplete}
       strokeWidth={7}
-      colors={[
-        ['#27AE60', 0.7],
-        ['#e92f48', 0.5],
-      ]}>
+      colorsTime={[0.9, 0.1]}
+      // colors={({0: '#27AE60'} as ColorFormat)}
+      colors={['#27AE60', '#fff']}>
       {({remainingTime}: any) => {
         if (remainingTime === warningTime) {
           playSound();
@@ -83,7 +84,8 @@ interface LargeCircularProgress {
   isPlaying: boolean;
   index?: number;
 }
-
+// const color1 = '27AE60';
+// const color2 = 'fff';
 export const LargeCircularProgress = ({
   onComplete,
   duration,
@@ -99,15 +101,15 @@ export const LargeCircularProgress = ({
         duration={duration}
         size={180}
         strokeWidth={15}
-        isLinearGradient
+        /*      isLinearGradient */
         onComplete={onComplete}
-        trailColor="transparent"
+        // trailColor="transparent"
+        colors={['#27AE60', '#fff']}
+        colorsTime={[0.9, 0.1]}
         key={index}
         rotation="counterclockwise"
-        colors={[
-          ['#27AE60', 0.9],
-          ['#fff', 0.1],
-        ]}>
+        // colors={[`#${color1}`, `#${color2}`]}
+      >
         {({remainingTime}: any) => {
           const minutes = Math.floor((remainingTime % 3600) / 60);
           const seconds = remainingTime % 60;
@@ -126,7 +128,7 @@ export const LargeCircularProgress = ({
     </LargeContainer>
   );
 };
-interface LoaderProgress {
+export interface LoaderProgress {
   loading: boolean;
   value: number;
 }

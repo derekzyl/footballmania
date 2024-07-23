@@ -1,9 +1,10 @@
-import {View} from 'native-base';
-import styled from 'styled-components';
-import {StyledText} from '../General/Text';
-import Coin from '@assets/svg/coin2.svg';
-import responsive from '@src/lib/responsive';
-import {TouchableOpacity} from 'react-native';
+import { View } from 'native-base';
+import styled from 'styled-components/native';
+import Coin from '../../assets/svg/coin2.svg';
+import responsive from '../../lib/responsive';
+import { StyledText } from '../General/Text';
+
+import { TouchableOpacity } from 'react-native';
 
 export const GameCardPointContainer = styled(View)`
   align-items: center;

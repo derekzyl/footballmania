@@ -1,4 +1,4 @@
-import {LeaderboardItemType} from '@src/redux/reducers/leaderboard/types';
+import { LeaderboardItemType } from '../../redux/reducers/leaderboard/types';
 
 export interface LeaderboardItemProp {
   item: LeaderboardItemType;

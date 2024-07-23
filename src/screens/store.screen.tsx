@@ -1,37 +1,33 @@
 /* eslint-disable react-native/no-inline-styles */
-import BannerAd from '@src/components/ads';
-import Box from '@src/components/General/Box';
-import LoaderOverlay from '@src/components/General/Loading';
-import GeneralSectionTitle from '@src/components/General/Section';
-import PlayHeader from '@src/components/Header/play';
-import PageLayout from '@src/components/Layout';
-import {LoadingText} from '@src/components/Play/style';
-import {
-  StoreFlatContainer,
-  StoreList,
-  storeStyles,
-} from '@src/components/Store';
-import StoreCard, {StoreCardMini} from '@src/components/Store/card';
-import responsive from '@src/lib/responsive';
-import {getCreditAction} from '@src/redux/actions/profile';
+import { View } from 'native-base';
+import React, { useEffect, useState } from 'react';
+import { FlatList, RefreshControl, ScrollView } from 'react-native';
+import { useDispatch } from 'react-redux';
+import BannerAd from '../components/ads';
+import Box from '../components/General/Box';
+import LoaderOverlay from '../components/General/Loading';
+import GeneralSectionTitle from '../components/General/Section';
+import PlayHeader from '../components/Header/play';
+import PageLayout from '../components/Layout';
+import { LoadingText } from '../components/Play/style';
+import { StoreFlatContainer, StoreList, storeStyles } from '../components/Store';
+import StoreCard, { StoreCardMini } from '../components/Store/card';
+import responsive from '../lib/responsive';
+import { getCreditAction } from '../redux/actions/profile';
 import {
   buyStoreItemAction,
   doneWatchingAdsAction,
   getStoreAction,
-} from '@src/redux/actions/store';
-import {StoreItem} from '@src/redux/reducers/store/types';
-import {useTypedSelector} from '@src/redux/store';
-import admobService from '@src/services/admob';
-import {sortStoreByType} from '@src/utils/store';
-import {fireToast} from '@src/utils/toast';
-import {View} from 'native-base';
-import React, {useEffect, useState} from 'react';
-import {FlatList, RefreshControl, ScrollView} from 'react-native';
-import {useDispatch} from 'react-redux';
-import {PaymentModal} from './payment';
+} from '../redux/actions/store';
+import { StoreItem } from '../redux/reducers/store/types';
+import { useTypedSelector } from '../redux/store';
+import admobService from '../services/admob';
+import { sortStoreByType } from '../utils/store';
+import { fireToast } from '../utils/toast';
+import { PaymentModal } from './payment';
 
 const StoreScreen = () => {
-  const allItems = useTypedSelector((state) => state.store.allItems);
+  const allItems = useTypedSelector(state => state.store.allItems);
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [paymentModal, setPaymentModal] = useState(false);
@@ -139,7 +135,7 @@ const StoreScreen = () => {
                     />
                     <FlatList
                       data={pack}
-                      keyExtractor={(item) => item.name}
+                      keyExtractor={item => item.name}
                       renderItem={({item, index}) => (
                         <StoreCard
                           onPress={handleBuy}

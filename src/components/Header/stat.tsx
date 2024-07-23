@@ -1,11 +1,11 @@
-import {useNavigation} from '@react-navigation/core';
-import Check from '@src/assets/svg/check-lightblue.svg';
-import Coin from '@src/assets/svg/coin.svg';
-import Pass from '@src/assets/svg/pass.svg';
-import Plus from '@src/assets/svg/plus.svg';
-import {useTypedSelector} from '@src/redux/store';
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
-import {HeaderStatContainer, HeaderStatItem, HeaderStatItemText} from './style';
+import Check from '../../assets/svg/check-lightblue.svg';
+import Coin from '../../assets/svg/coin.svg';
+import Pass from '../../assets/svg/pass.svg';
+import Plus from '../../assets/svg/plus.svg';
+import { useTypedSelector } from '../../redux/store';
+import { HeaderStatContainer, HeaderStatItem, HeaderStatItemText } from './style';
 
 interface HeaderStat {
   disabled?: boolean;

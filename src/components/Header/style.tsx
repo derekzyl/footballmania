@@ -1,8 +1,8 @@
-import {View} from 'native-base';
-import {Image, TouchableOpacity} from 'react-native';
-import styled from 'styled-components';
-import {BareButton} from '../General/Button/button.bare';
-import {StyledText} from '../General/Text';
+import { View } from 'native-base';
+import { Image, TouchableOpacity } from 'react-native';
+import styled from 'styled-components/native';
+import { BareButton } from '../General/Button/button.bare';
+import { StyledText } from '../General/Text';
 
 const avatarWidth = 45;
 

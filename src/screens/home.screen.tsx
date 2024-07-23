@@ -1,34 +1,31 @@
-import Box from '@components/General/Box';
-import CustomHeader from '@components/Header';
-import HomeCard from '@components/Home/card';
 import { useNavigation } from '@react-navigation/native';
-import Podium from '@src/assets/svg/podium.svg';
-import Profile from '@src/assets/svg/profile.svg';
-import Settings from '@src/assets/svg/settings.svg';
-import Shop from '@src/assets/svg/shop.svg';
-import Target from '@src/assets/svg/target.svg';
-import TV from '@src/assets/svg/tv.svg';
-import DailyRewardModal from '@src/components/Home/daily-reward';
+import React, { useEffect } from 'react';
+import { shallowEqual, useDispatch } from 'react-redux';
+import Podium from '../assets/svg/podium.svg';
+import Profile from '../assets/svg/profile.svg';
+import Settings from '../assets/svg/settings.svg';
+import Shop from '../assets/svg/shop.svg';
+import Target from '../assets/svg/target.svg';
+import TV from '../assets/svg/tv.svg';
+import Box from '../components/General/Box';
+import CustomHeader from '../components/Header';
+import HomeCard from '../components/Home/card';
+import DailyRewardModal from '../components/Home/daily-reward';
 import {
   HomeFlexColumn,
   HomeFlexRow,
   HomeHeading,
   homeScreenStyles,
-} from '@src/components/Home/style';
-import PlayLayout from '@src/components/Layout/play';
-import { getLeaderboardAction } from '@src/redux/actions/leaderboard';
-import { getAllLiveSessions } from '@src/redux/actions/play';
-import {
-  creditListenerAction,
-  getCreditAction,
-} from '@src/redux/actions/profile';
-import { getStoreAction } from '@src/redux/actions/store';
-import { useTypedSelector } from '@src/redux/store';
-import React, { useEffect } from 'react';
-import { shallowEqual, useDispatch } from 'react-redux';
-import SessionNotification from '@src/lib/notification';
-import { getMusicAction } from '@src/redux/actions/music';
-// import useSound from '@src/hooks/waitingsound';
+} from '../components/Home/style';
+import PlayLayout from '../components/Layout/play';
+import SessionNotification from '../lib/notification';
+import { getLeaderboardAction } from '../redux/actions/leaderboard';
+import { getMusicAction } from '../redux/actions/music';
+import { getAllLiveSessions } from '../redux/actions/play';
+import { creditListenerAction, getCreditAction } from '../redux/actions/profile';
+import { getStoreAction } from '../redux/actions/store';
+import { useTypedSelector } from '../redux/store';
+// import useSound from '../hooks/waitingsound';
 const items = [
   {
     icon: TV,
@@ -71,10 +68,10 @@ const items = [
 const HomeScreen = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  const user = useTypedSelector((state) => state.profile.user);
+  const user = useTypedSelector(state => state.profile.user);
   // const {stop} = useSound();
   const sessions = useTypedSelector(
-    (state) => state.play.allSessions,
+    state => state.play.allSessions,
     shallowEqual,
   );
   const sessionNotification = new SessionNotification(sessions);

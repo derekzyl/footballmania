@@ -1,12 +1,12 @@
-import Box from '@components/General/Box';
-import NavigationHeader from '@src/components/Header/navigation.header';
-import PlayLayout from '@src/components/Layout/play';
-import LeaderboardComponent from '@src/components/Leaderboard';
-import LeaderboardFooter from '@src/components/Leaderboard/footer';
-import {getLeaderboardAction} from '@src/redux/actions/leaderboard';
-import React, {useEffect, useState} from 'react';
-import {RefreshControl, ScrollView} from 'react-native';
-import {useDispatch} from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { RefreshControl, ScrollView } from 'react-native';
+import { useDispatch } from 'react-redux';
+import Box from '../components/General/Box';
+import NavigationHeader from '../components/Header/navigation.header';
+import PlayLayout from '../components/Layout/play';
+import LeaderboardComponent from '../components/Leaderboard';
+import LeaderboardFooter from '../components/Leaderboard/footer';
+import { getLeaderboardAction } from '../redux/actions/leaderboard';
 
 const LeaderboardScreen = () => {
   const dispatch = useDispatch();

@@ -1,8 +1,8 @@
-import responsive from '@src/lib/responsive';
-import {View} from 'native-base';
-import {Image, TouchableOpacity} from 'react-native';
-import styled from 'styled-components';
-import {CustomInput} from '../General/Input';
+import { View } from 'native-base';
+import { Image, TouchableOpacity } from 'react-native';
+import styled from 'styled-components/native';
+import responsive from '../../lib/responsive';
+import { CustomInput } from '../General/Input';
 
 export const ProfileStatList = styled(View)`
   margin-top: ${responsive.height(3.5)}px;
@@ -56,9 +56,9 @@ export const ProfileContent = styled(View)`
 `;
 
 export const ProfileNameInput = styled(CustomInput)`
-  font-size: ${(props) =>
+  font-size: ${props =>
     props.profileFontSize ? props.profileFontSize : '30'}px;
-  margin-top: ${(props) =>
+  margin-top: ${props =>
     props.profileMarginTop ? props.profileMarginTop : '0'}px;
   text-align: center;
   font-family: 'Concert One';

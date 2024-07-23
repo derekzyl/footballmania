@@ -1,8 +1,8 @@
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 
 // export const baseURL = 'https://football-heruku.herokuapp.com';
-// export const baseURL = "http://[::1]:5000"
-export const baseURL = 'https://footballmaniac.herokuapp.com';
+export const baseURL = "http://[::1]:5000"
+// export const baseURL = 'https://footballmaniac.herokuapp.com';
 
 const isTest = false;
 

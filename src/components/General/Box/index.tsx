@@ -1,7 +1,7 @@
-import useDimensions, {DimensionsType} from '@hooks/useDimensions';
-import {CustomThemeType, theme as Theme} from '@theme/index';
 import React from 'react';
-import {View, ViewStyle} from 'react-native';
+import { View, ViewStyle } from 'react-native';
+import useDimensions, { DimensionsType } from '../../../hooks/useDimensions';
+import { CustomThemeType, theme as Theme } from '../../../theme/index';
 
 interface BoxProps extends React.ComponentProps<typeof View> {
   padding?: keyof typeof Theme.spacing;

@@ -1,4 +1,4 @@
-import {Perks} from '@src/redux/reducers/play/types';
+import { Perks } from '../redux/reducers/play/types';
 
 export interface OptionState {
   answered: boolean;

@@ -1,18 +1,18 @@
-import Coin from '@assets/svg/coin2.svg';
-import {useNavigation} from '@react-navigation/core';
-import {useTypedSelector} from '@src/redux/store';
-import {View} from 'native-base';
+import { useNavigation } from '@react-navigation/core';
+import { View } from 'native-base';
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
-import styled from 'styled-components';
+import { TouchableOpacity } from 'react-native';
+import styled from 'styled-components/native';
+import Coin from '../../assets/svg/coin2.svg';
+import { useTypedSelector } from '../../redux/store';
 import Box from '../General/Box';
-import {StyledText} from '../General/Text';
+import { StyledText } from '../General/Text';
 import HeaderStat from './stat';
-import {HeaderContainer} from './style';
+import { HeaderContainer } from './style';
 
 const CustomHeader = () => {
   const navigation = useNavigation();
-  const credit = useTypedSelector((state) => state.profile.credit);
+  const credit = useTypedSelector(state => state.profile.credit);
 
   const handleStore = () => {
     navigation.navigate('Store');

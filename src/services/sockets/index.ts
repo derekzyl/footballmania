@@ -1,10 +1,10 @@
-import {store} from '@src/redux/store';
 import SocketIOClient from 'socket.io-client';
-import {baseURL} from '../_constants';
+import { store } from '../../redux/store';
+import { baseURL } from '../_constants';
 
 class BaseSocket {
   private socket;
-  public isConnected: boolean = false;
+  public isConnected = false;
 
   constructor() {
     console.log(baseURL);

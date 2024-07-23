@@ -1,9 +1,9 @@
-import {useNavigation} from '@react-navigation/core';
-import ExitModal from '@src/components/ExitModal';
-import PlayLayout from '@src/components/Layout/play';
-import PlayMain from '@src/components/Play';
-import PlayLoading from '@src/components/Play/loading';
-import React, {useRef, useState} from 'react';
+import { useNavigation } from '@react-navigation/core';
+import React, { useRef, useState } from 'react';
+import ExitModal from '../components/ExitModal';
+import PlayLayout from '../components/Layout/play';
+import PlayMain from '../components/Play';
+import PlayLoading from '../components/Play/loading';
 
 const PlayScreen = () => {
   const navigation = useNavigation();

@@ -2,20 +2,20 @@ import {
   CardStyleInterpolators,
   createStackNavigator,
 } from '@react-navigation/stack';
-import {getGeneralAction} from '@src/redux/actions/general';
-import {getProfileAction} from '@src/redux/actions/profile';
-import CategoryScreen from '@src/screens/category.screen';
-import GameSelectScreen from '@src/screens/game-select.screen';
-import HomeScreen from '@src/screens/home.screen';
-import LeaderboardScreen from '@src/screens/leaderboard.screen';
-import PlayScreen from '@src/screens/play.screen';
-import ProfileScreen from '@src/screens/profile.screen';
-import SettingsScreen from '@src/screens/settings.screen';
-import AboutScreen from '@src/screens/about.screen';
-import StoreScreen from '@src/screens/store.screen';
-import TermsScreen from '@src/screens/terms.screen';
-import React, {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
+import React, { useEffect } from 'react';
+import { getGeneralAction } from '../redux/actions/general';
+import { getProfileAction } from '../redux/actions/profile';
+import { useAppDispatch } from '../redux/store';
+import AboutScreen from '../screens/about.screen';
+import CategoryScreen from '../screens/category.screen';
+import GameSelectScreen from '../screens/game-select.screen';
+import HomeScreen from '../screens/home.screen';
+import LeaderboardScreen from '../screens/leaderboard.screen';
+import PlayScreen from '../screens/play.screen';
+import ProfileScreen from '../screens/profile.screen';
+import SettingsScreen from '../screens/settings.screen';
+import StoreScreen from '../screens/store.screen';
+import TermsScreen from '../screens/terms.screen';
 
 const Stack = createStackNavigator();
 
@@ -63,7 +63,7 @@ const screens = [
 ];
 
 const MainStack = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(getProfileAction());
     dispatch(getGeneralAction());
@@ -73,15 +73,13 @@ const MainStack = () => {
     <Stack.Navigator
       screenOptions={{
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        headerShown: false,
       }}
-      headerMode="none"
-      initialRouteName="Home">
+
+      initialRouteName="Home"
+    >
       {screens.map((screen, index) => (
-        <Stack.Screen
-          key={index}
-          name={screen.name}
-          component={screen.component}
-        />
+        <Stack.Screen key={index} name={screen.name} component={screen.component} />
       ))}
     </Stack.Navigator>
   );

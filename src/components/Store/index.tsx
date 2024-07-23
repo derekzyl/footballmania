@@ -1,8 +1,8 @@
-import responsive from '@src/lib/responsive';
-import {View} from 'native-base';
-import {StyleSheet} from 'react-native';
-import styled from 'styled-components';
-import {StyledText} from '../General/Text';
+import { View } from 'native-base';
+import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
+import responsive from '../../lib/responsive';
+import { StyledText } from '../General/Text';
 
 export const storeStyles = StyleSheet.create({
   col: {

@@ -1,6 +1,6 @@
-import BackIcon from '@assets/svg/back_icon2.svg';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
+import BackIcon from '../../assets/svg/back_icon2.svg';
 import Box from '../General/Box';
 import {
   BackIconContainer,

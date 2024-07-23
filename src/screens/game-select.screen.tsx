@@ -1,37 +1,34 @@
 /* eslint-disable react-native/no-inline-styles */
 import { useNavigation } from '@react-navigation/native';
-import GameCard from '@src/components/GameSelect/card';
-import InsufficientCreditModal from '@src/components/GameSelect/insufficient-modal';
-import Box from '@src/components/General/Box';
-import GeneralSectionTitle from '@src/components/General/Section';
-import PlayHeader from '@src/components/Header/play';
-import PageLayout from '@src/components/Layout';
-import { StoreFlatContainer } from '@src/components/Store';
-import {
-  getAllLiveSessions,
-  joinLiveSessionAction,
-} from '@src/redux/actions/play';
-import { getCreditAction } from '@src/redux/actions/profile';
-import { Session } from '@src/redux/reducers/play/types';
-import { useTypedSelector } from '@src/redux/store';
 import React, { useEffect, useState } from 'react';
 import {
-  FlatList,
-  RefreshControl,
-  ScrollView,
-  BackHandler,
-  Alert,
+    Alert,
+    BackHandler,
+    FlatList,
+    RefreshControl,
+    ScrollView,
 } from 'react-native';
 import { useDispatch } from 'react-redux';
+import GameCard from '../components/GameSelect/card';
+import InsufficientCreditModal from '../components/GameSelect/insufficient-modal';
+import Box from '../components/General/Box';
+import GeneralSectionTitle from '../components/General/Section';
+import PlayHeader from '../components/Header/play';
+import PageLayout from '../components/Layout';
+import { StoreFlatContainer } from '../components/Store';
+import { getAllLiveSessions, joinLiveSessionAction } from '../redux/actions/play';
+import { getCreditAction } from '../redux/actions/profile';
+import { Session } from '../redux/reducers/play/types';
+import { useTypedSelector } from '../redux/store';
 
 import { View } from 'native-base';
-import BannerAd from '@src/components/ads';
-import responsive from '@src/lib/responsive';
-import { LoadingText } from '@src/components/Play/style';
-import UnavailableSessionModal from '@src/components/GameSelect/session-unavailable';
-import styled from 'styled-components';
-// import waitingSong from '@src/assets/sounds/waitingroom.mp3';
-import useSound from '@src/hooks/waitingsound';
+import styled from 'styled-components/native';
+import BannerAd from '../components/ads';
+import UnavailableSessionModal from '../components/GameSelect/session-unavailable';
+import { LoadingText } from '../components/Play/style';
+import responsive from '../lib/responsive';
+// import waitingSong from '../assets/sounds/waitingroom.mp3';
+import useSound from '../hooks/waitingsound';
 
 const waitingTime = 300;
 
@@ -39,12 +36,12 @@ const GameSelectScreen = () => {
   const dispatch = useDispatch();
   const [refreshing, setRefreshing] = useState(false);
   const navigation = useNavigation();
-  const credit = useTypedSelector((state) => state.profile.credit);
-  const allSessions = useTypedSelector((state) => state.play.allSessions);
+  const credit = useTypedSelector(state => state.profile.credit);
+  const allSessions = useTypedSelector(state => state.play.allSessions);
   const [unavailableSessionModal, setUnavailableSessionModal] = useState(false);
   const [insufficientModal, setInsufficientModal] = useState(false);
-  const { play, stop } = useSound();
-  const sound = useTypedSelector((state) => state.profile.sound);
+  const {play, stop} = useSound();
+  const sound = useTypedSelector(state => state.profile.sound);
 
   /*
 
@@ -176,9 +173,9 @@ const GameSelectScreen = () => {
         visible={unavailableSessionModal}
       />
       <PageLayout>
-        <Box margin="xs" style={{ flex: 1 }}>
+        <Box margin="xs" style={{flex: 1}}>
           <PlayHeader />
-          <Box style={{ flex: 1, width: '100%' }}>
+          <Box style={{flex: 1, width: '100%'}}>
             <ScrollView
               refreshControl={
                 <RefreshControl
@@ -193,9 +190,9 @@ const GameSelectScreen = () => {
               <StoreFlatContainer>
                 {allSessions.length ? (
                   <FlatList
-                    keyExtractor={(item) => item._id}
+                    keyExtractor={item => item._id}
                     data={allSessions}
-                    renderItem={({ item }) => (
+                    renderItem={({item}) => (
                       <GameCard
                         onPress={handleClick}
                         key={item._id}

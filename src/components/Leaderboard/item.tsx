@@ -1,6 +1,6 @@
-import Coin from '@assets/svg/coin.svg';
-import {cloudinary} from '@src/utils/image';
 import React from 'react';
+import Coin from '../../assets/svg/coin.svg';
+import { cloudinary } from '../../utils/image';
 import {
   LeaderboardItemBase,
   LeaderboardItemCoin,
@@ -12,7 +12,7 @@ import {
   LeaderboardItemName,
   LeaderboardItemScore,
 } from './item-style';
-import {LeaderboardItemProp} from './types';
+import { LeaderboardItemProp } from './types';
 
 const LeaderboardItem = ({item, index, onPress}: LeaderboardItemProp) => {
   return (

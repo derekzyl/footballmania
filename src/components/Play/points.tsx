@@ -1,6 +1,6 @@
 import React from 'react';
-import {PointContainer, PointLogo, PointText} from './style';
-import PointIcon from '@assets/svg/star.svg';
+import PointIcon from '../../assets/svg/star.svg';
+import { PointContainer, PointLogo, PointText } from './style';
 
 const PlayingPoint = ({alt = false, value = 0}: any) => {
   return (

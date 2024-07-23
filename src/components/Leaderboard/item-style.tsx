@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import {StyledText} from '../General/Text';
-import {View, Image, TouchableOpacity} from 'react-native';
-import {LeaderboardScoreText} from './style';
-import responsive from '@src/lib/responsive';
+import { Image, TouchableOpacity, View } from 'react-native';
+import styled from 'styled-components/native';
+import responsive from '../../lib/responsive';
+import { StyledText } from '../General/Text';
+import { LeaderboardScoreText } from './style';
 
 export const LeaderboardItemContainer = styled(TouchableOpacity)`
   flex-direction: row;

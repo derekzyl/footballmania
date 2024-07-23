@@ -1,15 +1,15 @@
-import Crown from '@assets/svg/crown.svg';
 import React from 'react';
-import {LeaderboardScore, LeaderboardScoreText} from './style';
+import Coin from '../../assets/svg/coin.svg';
+import Crown from '../../assets/svg/crown.svg';
+import { cloudinary } from '../../utils/image';
 import {
-  LeaderboardSpecialCircle,
-  LeaderboardSpecialContainer,
-  LeaderboardFirstImage,
-  LeaderboardSpecialName,
+    LeaderboardFirstImage,
+    LeaderboardSpecialCircle,
+    LeaderboardSpecialContainer,
+    LeaderboardSpecialName,
 } from './special-style';
-import {LeaderboardItemProp} from './types';
-import Coin from '@assets/svg/coin.svg';
-import {cloudinary} from '@src/utils/image';
+import { LeaderboardScore, LeaderboardScoreText } from './style';
+import { LeaderboardItemProp } from './types';
 
 interface LeaderboardSpecialProp extends LeaderboardItemProp {
   first?: boolean;

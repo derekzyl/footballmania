@@ -1,12 +1,13 @@
-import {View} from 'native-base';
+import { View } from 'native-base';
 import React from 'react';
-import styled from 'styled-components';
-import {BlockContainer, BlockDepth, BlockOuter} from '../Cards/style';
-import {StyledText} from '../Text';
-import {ButtonVariant, getBtnColors} from './variants';
+import { TouchableOpacity } from 'react-native';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {TouchableOpacity} from 'react-native';
-import responsive from '@src/lib/responsive';
+import styled from 'styled-components/native';
+import { BlockContainer, BlockDepth, BlockOuter } from '../Cards/style';
+import { StyledText } from '../Text';
+
+import responsive from './../../../lib/responsive';
+import { ButtonVariant, getBtnColors } from './variants';
 
 export interface CustomButtonProp {
   text?: string;

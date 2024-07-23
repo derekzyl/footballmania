@@ -1,6 +1,6 @@
-import MusicService from '@src/services/music';
-import { MusicE } from '../reducers/music/types';
 import { action } from 'typesafe-actions';
+import MusicService from '../../services/music';
+import { MusicE } from '../reducers/music/types';
 
 export const getMusicActions = (dispatch: any) => {
   dispatch(getMusicAction());

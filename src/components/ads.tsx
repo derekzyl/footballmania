@@ -1,8 +1,8 @@
 import React from 'react';
 // import {AdMobBanner} from 'react-native-admob';
-import {View} from 'native-base';
-import {StyleSheet} from 'react-native';
-import {getBannerAdUnit} from '@src/services/_constants';
+import { View } from 'native-base';
+import { StyleSheet } from 'react-native';
+import { getBannerAdUnit } from '../services/_constants';
 
 const BannerAd = () => {
   const bannerAdUnit = getBannerAdUnit();

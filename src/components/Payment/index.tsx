@@ -1,30 +1,21 @@
 /* eslint-disable prettier/prettier */
-import { CustomButton } from '@src/components/General/Button';
-import { logoutAction } from '@src/redux/actions/auth';
-import React, { useState, useEffect } from 'react';
-import { BackHandler } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import {
+  Alert, BackHandler, Image, Modal, Pressable, StyleSheet,
+  Text, TextInput, TouchableOpacity, View
+} from 'react-native';
+import Share from 'react-native-share';
 import { useDispatch } from 'react-redux';
+import { CustomButton } from '../../components/General/Button';
+import { logoutAction } from '../../redux/actions/auth';
+import { getProfileAction, updatePlaySoundAction } from '../../redux/actions/profile';
+import { useTypedSelector } from '../../redux/store';
+import { fireToast } from '../../utils/toast';
 import Box from '../General/Box';
 import { ButtonVariant } from '../General/Button/variants';
 import BlurBackground from '../Layout/blur';
-import Share from 'react-native-share';
-import { fireToast } from '@src/utils/toast';
-import { useNavigation } from '@react-navigation/core';
-import { updatePlaySoundAction } from '@src/redux/actions/profile';
-import {
-  Alert,
-  TextInput,
-  Modal,
-  StyleSheet,
-  Text,
-  Pressable,
-  View,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
-import axios from 'axios';
-import { useTypedSelector } from '@src/redux/store';
-import { getProfileAction } from '@src/redux/actions/profile';
 
 const RatingModal = ({
   modalVisible,

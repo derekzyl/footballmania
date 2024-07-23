@@ -1,6 +1,6 @@
-import {Session} from '@src/redux/reducers/play/types';
-import {getFormattedTime, getWeekday} from '@src/utils/date';
 import React from 'react';
+import { Session } from '../../redux/reducers/play/types';
+import { getFormattedTime, getWeekday } from '../../utils/date';
 import BlurBackground from '../Layout/blur';
 import {
   GameCardBase,

@@ -1,16 +1,16 @@
-import QuestionBg from '@assets/svg/question-bg.svg';
-import {OptionState} from '@src/hooks/types';
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
+import QuestionBg from '../../assets/svg/question-bg.svg';
+import { OptionState } from '../../hooks/types';
 import Box from '../General/Box';
-import {CustomButton} from '../General/Button';
-import {ButtonVariant} from '../General/Button/variants';
+import { CustomButton } from '../General/Button';
+import { ButtonVariant } from '../General/Button/variants';
 import BlurBackground from '../Layout/blur';
-import {PlayCountdown} from './countdown';
+import { PlayCountdown } from './countdown';
 import PlayingPoint from './points';
 import {
   miscLoadingStyle,

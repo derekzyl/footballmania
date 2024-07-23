@@ -1,7 +1,7 @@
-import {appendAnswerAction} from '@src/redux/actions/play';
-import {useState} from 'react';
-import {useDispatch} from 'react-redux';
-import {PlayAnswerState} from './types';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { appendAnswerAction } from '../redux/actions/play';
+import { PlayAnswerState } from './types';
 import useTimer from './usePlayTimer';
 
 const initialAnswerState: PlayAnswerState = {
@@ -64,7 +64,7 @@ const useAnswer = () => {
       if (!is_correct) {
         if (answerState.attempts === 0) {
           console.log('try again');
-          setAnswerState((st) => ({
+          setAnswerState(st => ({
             ...st,
             attempts: 1,
           }));
@@ -92,7 +92,7 @@ const useAnswer = () => {
   };
 
   const consumeDouble = () => {
-    setAnswerState((st) => ({
+    setAnswerState(st => ({
       ...st,
       used_double: true,
       attempts: 0,

@@ -1,6 +1,6 @@
-import responsive from '@src/lib/responsive';
-import styled from 'styled-components';
-import {StyledText} from '../Text';
+import styled from 'styled-components/native';
+import responsive from '../../../lib/responsive';
+import { StyledText } from '../Text';
 
 const GeneralSectionTitle = styled(StyledText)`
   color: #fff;

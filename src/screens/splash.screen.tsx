@@ -1,25 +1,19 @@
-import SplashLogo from '@assets/svg/splash-logo2.svg';
 import { useNavigation } from '@react-navigation/native';
-import Box from '@src/components/General/Box';
-import { CustomButton } from '@src/components/General/Button';
-import { ButtonVariant } from '@src/components/General/Button/variants';
-import LoaderOverlay from '@src/components/General/Loading';
-import PageLayout from '@src/components/Layout';
-import {
-  SplashButtonList,
-  SplashFlex,
-  SplashSection,
-  SplashText,
-} from '@src/components/Splash/style';
+import React, { useState } from 'react';
+
+import { Box } from 'native-base';
+import { CustomButton } from '../components/General/Button';
+import { ButtonVariant } from '../components/General/Button/variants';
+import PageLayout from '../components/Layout';
+import { SplashButtonList, SplashFlex, SplashSection, SplashText } from '../components/Splash/style';
 import {
   /*   facebookLoginAction, */
   googleLoginAction,
-} from '@src/redux/actions/auth';
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+} from '../redux/actions/auth';
+import { useAppDispatch } from '../redux/store';
 
-const SplashScreen = () => {
-  const dispatch = useDispatch();
+export const SplashScreen = () => {
+  const dispatch = useAppDispatch();
   const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
 
@@ -42,12 +36,15 @@ const SplashScreen = () => {
   //   dispatch(facebookLoginAction(onRegisterSuccess, onError));
   // };
 
+
   return (
     <PageLayout>
-      <LoaderOverlay visible={loading} />
+      {/* <Text>hello world</Text> */}
+      {/* <LoaderOverlay visible={loading} /> */}
       <SplashFlex>
         <Box>
-          <SplashLogo />
+        
+          {/* <SplashLogo /> */}
         </Box>
 
         <SplashSection>
@@ -77,4 +74,4 @@ const SplashScreen = () => {
   );
 };
 
-export default SplashScreen;
+

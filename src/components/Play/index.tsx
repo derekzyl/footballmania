@@ -1,13 +1,13 @@
-import usePlaySession from '@src/hooks/useScore';
-import {View} from 'native-base';
+import { View } from 'native-base';
 import React from 'react';
 import Animated from 'react-native-reanimated';
+import usePlaySession from '../../hooks/useScore';
 import Box from '../General/Box';
 import PlayHeader from '../Header/play';
 import PlayControls from './controls';
 import QuestionBox from './question-box';
 import ScoreModal from './score-modal';
-import {miscLoadingStyle, PlayContainer, PlayContent} from './style';
+import { miscLoadingStyle, PlayContainer, PlayContent } from './style';
 import PlayWinners from './winners';
 
 const PlayMain = () => {

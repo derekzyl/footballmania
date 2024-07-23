@@ -1,6 +1,6 @@
-import generalService from '@src/services/general';
-import {action} from 'typesafe-actions';
-import {GeneralActions} from '../reducers/general/types';
+import { action } from 'typesafe-actions';
+import generalService from '../../services/general';
+import { GeneralActions } from '../reducers/general/types';
 
 export const getGeneralAction = () => async (dispatch: any) => {
   dispatch(getAllTeamsAction());

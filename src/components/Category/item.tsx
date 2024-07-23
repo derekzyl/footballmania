@@ -1,5 +1,5 @@
-import Barcelona from '@src/assets/svg/barcelona.svg';
 import React from 'react';
+import Barcelona from '../../assets/svg/barcelona.svg';
 import {
   CategortItemContainer,
   CategoryItemLeading,

@@ -1,16 +1,16 @@
-import Coin from '@assets/svg/coin2.svg';
-import Confetti from '@assets/svg/confetti.svg';
-import {dailyLoginAction} from '@src/redux/actions/profile';
-import React, {useEffect, useState} from 'react';
-import {useDispatch} from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import Coin from '../../assets/svg/coin2.svg';
+import Confetti from '../../assets/svg/confetti.svg';
+import { dailyLoginAction } from '../../redux/actions/profile';
 import Box from '../General/Box';
 import CustomModal from '../General/CustomModal';
 import {
   DailyRewardContent,
   DailyRewardPointContainer,
+  DailyRewardPointText,
   DailyRewardText,
   DailyRewardTitle,
-  DailyRewardPointText,
 } from './daily-reward-style';
 
 const initial = {

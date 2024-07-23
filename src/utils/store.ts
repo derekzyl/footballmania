@@ -1,4 +1,4 @@
-import {StoreItem} from '@src/redux/reducers/store/types';
+import { StoreItem } from '../redux/reducers/store/types';
 
 interface storeSortTypeResponse {
   pack: StoreItem[];
@@ -13,7 +13,7 @@ export const sortStoreByType = (items: StoreItem[]): storeSortTypeResponse => {
   const pack: StoreItem[] = [];
   const single: StoreItem[] = [];
 
-  items.map((item) => {
+  items.map(item => {
     if (item.type === 'SINGLE') {
       single.push(item);
     } else {

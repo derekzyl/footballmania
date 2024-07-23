@@ -1,13 +1,14 @@
-import responsive from '@src/lib/responsive';
-import {Content, View} from 'native-base';
-import styled from 'styled-components';
-import {StyledText} from '../General/Text';
+import { Container, View as NBView } from 'native-base';
+import { } from 'react-native';
+import styled from 'styled-components/native';
+import responsive from '../../lib/responsive';
+import { StyledText } from '../General/Text';
 
-export const SplashContent = styled(Content)`
+export const SplashContent = styled(Container)`
   flex: 1;
 `;
 
-export const SplashFlex = styled(View)`
+export const SplashFlex = styled(NBView)`
   flex: 1;
   justify-content: space-between;
   align-items: center;
@@ -18,11 +19,11 @@ export const SplashFlex = styled(View)`
   margin: ${responsive.height(12)}px auto;
 `;
 
-export const SplashBottom = styled(View)`
+export const SplashBottom = styled(NBView)`
   width: 100%;
 `;
 
-export const SplashButtonList = styled(View)`
+export const SplashButtonList = styled(NBView)`
   width: 100%;
 `;
 
@@ -33,7 +34,7 @@ export const SplashText = styled(StyledText)`
   margin-bottom: ${responsive.height(2)}px;
 `;
 
-export const SplashDivider = styled(View)`
+export const SplashDivider = styled(NBView)`
   flex-direction: row;
   width: 100%;
   align-items: center;
@@ -41,7 +42,7 @@ export const SplashDivider = styled(View)`
   margin-bottom: ${responsive.height(4)}px;
 `;
 
-export const SplashDividerLine = styled(View)`
+export const SplashDividerLine = styled(NBView)`
   background-color: #c3c7e5;
   height: 0.7px;
   flex-direction: row;
@@ -55,6 +56,6 @@ export const SplashDividerText = styled(StyledText)`
   padding: 0 20px;
 `;
 
-export const SplashSection = styled(View)`
+export const SplashSection = styled(NBView)`
   width: 100%;
 `;
